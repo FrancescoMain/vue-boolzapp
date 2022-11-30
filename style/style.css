@@ -52,3 +52,21 @@ div.ms_container {
     top: 20px;
     width: 80%;
 }
+
+.row .ms_nav{
+    width: 35%;
+    /* deb */
+    background-color: aqua;
+    height: 900px;  
+}
+
+.ms_chat{
+    width: 65%;
+    /* deb  */
+    background-color: rgb(255, 0, 119);
+    height: 900px;
+}
+
+.ms {
+    height: 10px;
+}
