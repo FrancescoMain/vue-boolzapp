@@ -144,7 +144,7 @@ div.ms_alert-text a {
     border-bottom-right-radius: 0;
 }
 
-.form-control {
+form .form-control {
     border-top-left-radius: 0;  
     border-bottom-left-radius: 0;  
 }   
@@ -278,11 +278,29 @@ div.ms_chat-body-other span {
     color: #7d8e79;
 }
 
+/* <!-- chat textarea  --> */
 .ms_chat-foot {
     background-color: #eaeaea;
-    /* deb */
     height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.ms_text-bar {
+    width: 80%;
+}
+
+.emoji i{
+    font-size: 30px;
+    color: #6d7576;
+    margin-left: 40px;
+}
+
+.send i{
+    font-size: 20px;
+    color: #6d7576;
+    margin-right: 40px;
+}
 
 /* bs rules  */
