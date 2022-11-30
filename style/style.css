@@ -31,5 +31,13 @@ img {
 
 /* ms */
 
+div.ms_head {
+    background-color: #009688;
+    height: 140px;
+} 
 
+div.ms_body {
+    background-color: #dadbd4;
+    height: calc(100vh - 140px);
+} 
 /* bs rules  */
