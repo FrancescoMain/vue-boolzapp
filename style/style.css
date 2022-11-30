@@ -56,47 +56,11 @@ div.ms_container {
 
 div.ms_cont_nav{
     width: 35%;
-    /* deb */
-    background-color: aqua; 
+
 
 }
 
 
-.ms_cont_chat-prev{
-    overflow-y: auto;
-    height: 500px;
-}
-
-.ms_cont_chat-prev .ms_chat-prev {
-    background-color: #4b2c2c;
-    /* deb */
-    height: 80px;
-
-}
-
-div.ms_chat{
-    width: 65%;
-
-}
-
-.ms_chat-head {
-    background-color: #eaeaea;
-    /* deb */
-    height: 70px;
-    border-left: 1px #d6d6d6 solid ;
-}
-
-.ms_chat-body {
-    background-image: url("../img/mine.jpg");
-    /* deb */
-    height: calc(100% - 140px);
-}
-
-.ms_chat-foot {
-    background-color: #eaeaea;
-    /* deb */
-    height: 70px;
-}
 
 .ms_cont_nav .ms_nav {
     background-color: #eaeaea;
@@ -181,3 +145,69 @@ div.ms_alert-text a {
     border-top-left-radius: 0;  
     border-bottom-left-radius: 0;  
 }   
+
+
+.ms_cont_chat-prev{
+    overflow-y: auto;
+
+}
+
+.ms_cont_chat-prev .ms_chat-prev {
+    display: flex;
+    justify-content: space-between; 
+    border-bottom: #f5f5f5 1px solid;
+
+}
+
+.ms_chat-prev-item {
+    display: flex;
+}
+
+.ms_chat-prev-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 5px 10px;
+
+}
+
+.ms_chat-prev-text {
+    margin-top: 5px;
+}
+
+.ms_chat-prev-text h5{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.ms_chat-prev-text p{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #b6b9bb;
+
+}
+
+div.ms_chat{
+    width: 65%;
+
+}
+
+.ms_chat-head {
+    background-color: #eaeaea;
+    /* deb */
+    height: 70px;
+    border-left: 1px #d6d6d6 solid ;
+}
+
+.ms_chat-body {
+    background-image: url("../img/mine.jpg");
+    /* deb */
+    height: calc(100% - 140px);
+}
+
+.ms_chat-foot {
+    background-color: #eaeaea;
+    /* deb */
+    height: 70px;
+}

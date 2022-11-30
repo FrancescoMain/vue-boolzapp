@@ -51,6 +51,7 @@
                         <a href="">Attiva notifiche desktop</a>
                     </div>    
                 </div>
+                <!-- search  -->
                 <div class="ms_search">
                     <form class="d-flex col" role="search">
                         <span class="input-group-text ms_search-icon">
@@ -59,8 +60,17 @@
                         <input type="text" class="form-control ms_search-bar" placeholder="Cerca o inizia una nuova chat">          
                     </form>
                 </div>
+                <!-- list of chat  -->
                 <div class="ms_cont_chat-prev">
-                    <div class="ms_chat-prev"></div>
+                    <div class="ms_chat-prev">
+                        <div class="ms_chat-prev-item">
+                            <img :src="'img/avatar_'+ 1 + '.jpg' " :alt="contacts[0].name">
+                            <div class="ms_chat-prev-text">
+                                <h5>{{contacts[0].name}}</h5>
+                                <p>{{contacts[0].messages[0].message}}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- chat  -->
