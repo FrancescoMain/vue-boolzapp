@@ -51,22 +51,50 @@ div.ms_container {
     position: absolute;
     top: 20px;
     width: 80%;
+    display: flex;
 }
 
-.row .ms_nav{
+div.ms_cont_nav{
     width: 35%;
     /* deb */
-    background-color: aqua;
-    height: 900px;  
+    background-color: aqua; 
+
 }
 
-.ms_chat{
+div.ms_chat{
     width: 65%;
     /* deb  */
     background-color: rgb(255, 0, 119);
-    height: 900px;
+
 }
 
-.ms {
-    height: 10px;
+.ms_cont_nav .ms_nav {
+    background-color: #eaeaea;
+    /* deb */
+    height: 70px;
+
+}
+.ms_cont_nav .ms_alert {
+    background-color: #8edafc;
+    /* deb */
+    height: 80px;
+
+}
+
+.ms_cont_nav .ms_search {
+    background-color: #eaeaea;
+    /* deb */
+    height: 50px;
+
+}
+
+.ms_cont_chat-prev{
+    overflow-y:visible;
+}
+
+.ms_cont_chat-prev .ms_chat-prev {
+    background-color: #1e1c1c;
+    /* deb */
+    height: 80px;
+
 }
