@@ -65,8 +65,7 @@ div.ms_cont_nav{
 
 .ms_cont_nav .ms_nav {
     background-color: #eaeaea;
-    /* deb */
-    height: 70px;
+
 
 }
 .ms_cont_nav .ms_alert {
@@ -117,4 +116,28 @@ div.ms_chat{
     background-color: #eaeaea;
     /* deb */
     height: 70px;
+}
+
+div.ms_nav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div .ms_nav-item-user {
+    display: flex;
+    align-items: center;
+}
+
+img.ms_user-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin:5px 10px;
+
+}
+
+.ms_nav-item-details i{
+    margin:0 10px;
+    color: #b1b1b1;
 }

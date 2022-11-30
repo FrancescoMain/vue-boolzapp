@@ -27,7 +27,19 @@
         <div id ="app" class="ms_container">
             <!-- contact  -->
             <div class="ms_cont_nav">
-                <div class="ms_nav"></div>
+                <div class="ms_nav">
+                    <div class="ms_nav-item">
+                        <div class="ms_nav-item-user">
+                            <img class="ms_user-image" :src="user.img" :alt="user.userName">
+                            {{user.userName}}
+                        </div>
+                        <div class="ms_nav-item-details">
+                            <i class="fa-solid fa-circle-notch"></i>    
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical me-3"></i>
+                        </div>
+                    </div>
+                </div>
                 <div class="ms_alert"></div>
                 <div class="ms_search"></div>
                 <div class="ms_cont_chat-prev">
