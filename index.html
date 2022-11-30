@@ -51,7 +51,7 @@
                         <a href="">Attiva notifiche desktop</a>
                     </div>    
                 </div>
-                <!-- search  -->
+                <!-- search  bs element-->
                 <div class="ms_search">
                     <form class="d-flex col" role="search">
                         <span class="input-group-text ms_search-icon">
@@ -75,7 +75,23 @@
             </div>
             <!-- chat  -->
             <div class="ms_chat">
-                <div class="ms_chat-head"></div>
+                <!-- header  -->
+                <div class="ms_chat-head">
+                    <div class="ms_chat-item">
+                        <div class="ms_chat-item-user">
+                            <img class="ms_contact-image" :src="'img/avatar' + contacts[0].avatar + '.jpg'" :alt="user.userName">
+                            <div class="ms_chat-ite-text">
+                                {{contacts[0].name}}
+                                <div class="last-access">Ultimo Accesso</div>
+                            </div>
+                        </div>
+                        <div class="ms_chat-item-details">
+                            <i class="fa-solid fa-magnifying-glass"></i>    
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical me-3"></i>
+                        </div>
+                    </div>
+                </div>
                 <div class="ms_chat-body"></div>
                 <div class="ms_chat-foot"></div>
             </div>                

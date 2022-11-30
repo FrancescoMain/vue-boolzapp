@@ -32,19 +32,20 @@ img {
 
 /* ms */
 
+
+/* <!-- green head  --> */
 div.ms_head {
     background-color: #009688;
     height: 140px;
 } 
-
+/* <!-- gray body  --> */
 div.ms_body {
     background-color: #dadbd4;
     height: calc(100vh - 140px);
     display: flex;
     justify-content: center;
 } 
-/* bs rules  */
-
+/* <!-- centred container  --> */
 div.ms_container {
     background-color: #ffffff;
     height: 95%;
@@ -53,15 +54,14 @@ div.ms_container {
     width: 80%;
     display: flex;
 }
-
+/* <!-- contact  --> */
 div.ms_cont_nav{
     width: 35%;
 
 
 }
 
-
-
+/* <!-- user top navigation  --> */
 .ms_cont_nav .ms_nav {
     background-color: #eaeaea;
 
@@ -84,6 +84,7 @@ img.ms_user-image {
     height: 60px;
     border-radius: 50%;
     margin:5px 10px;
+    object-fit: cover;
 
 }
 
@@ -92,6 +93,7 @@ img.ms_user-image {
     color: #b1b1b1;
 }
 
+/* <!-- alert box  --> */
 .ms_cont_nav .ms_alert {
     background-color: #8edafc;
     display: flex;
@@ -124,6 +126,7 @@ div.ms_alert-text a {
     text-decoration:underline;
 }
 
+/* <!-- search  --> */
 .ms_cont_nav .ms_search {
     background-color: #eaeaea;
 
@@ -146,7 +149,7 @@ div.ms_alert-text a {
     border-bottom-left-radius: 0;  
 }   
 
-
+/* <!-- list of chat  --> */
 .ms_cont_chat-prev{
     overflow-y: auto;
 
@@ -188,17 +191,56 @@ div.ms_alert-text a {
 
 }
 
+
+/* <!-- chat  --> */
 div.ms_chat{
     width: 65%;
 
 }
 
+/* <!-- header  --> */
 .ms_chat-head {
     background-color: #eaeaea;
     /* deb */
     height: 70px;
     border-left: 1px #d6d6d6 solid ;
 }
+
+div.ms_chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div .ms_chat-item-user {
+    display: flex;
+    align-items: center;
+}
+
+img.ms_contact-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin:5px 10px;
+    object-fit: cover;
+
+}
+
+div.ms_chat-ite-text {
+    font-size: 14px;
+
+}
+div.last-access {
+    font-size: 10px;
+    color: #90909a;
+}
+
+.ms_chat-item-details i{
+    margin:0 10px;
+    color: #b1b1b1;
+}
+
+
 
 .ms_chat-body {
     background-image: url("../img/mine.jpg");
@@ -211,3 +253,6 @@ div.ms_chat{
     /* deb */
     height: 70px;
 }
+
+
+/* bs rules  */

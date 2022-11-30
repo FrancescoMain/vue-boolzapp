@@ -4,7 +4,7 @@ createApp({
     data() {
         return{
         user: {
-            img: "img/avatar_1.jpg",
+            img: "img/me.jpeg",
             userName: "Francesco Cesarano"
         },
         contacts: [
