@@ -241,11 +241,41 @@ div.last-access {
 }
 
 
-
+/* <!-- chat body  --> */
 .ms_chat-body {
     background-image: url("../img/mine.jpg");
-    /* deb */
     height: calc(100% - 140px);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px 0;
+}
+
+div.ms_chat-body-your{
+    margin: 5px 0;
+    align-self: flex-end;
+    background-color: #d5f9ba;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+div.ms_chat-body-your span {
+    font-size: 8px;
+    color: #7d8e79;
+}
+
+div.ms_chat-body-other{
+    margin: 5px 0;
+    align-self: flex-start;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+div.ms_chat-body-other span {
+    font-size: 8px;
+    color: #7d8e79;
 }
 
 .ms_chat-foot {
