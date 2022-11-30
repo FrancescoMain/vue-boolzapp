@@ -61,12 +61,7 @@ div.ms_cont_nav{
 
 }
 
-div.ms_chat{
-    width: 65%;
-    /* deb  */
-    background-color: rgb(255, 0, 119);
 
-}
 
 .ms_cont_nav .ms_nav {
     background-color: #eaeaea;
@@ -89,12 +84,37 @@ div.ms_chat{
 }
 
 .ms_cont_chat-prev{
-    overflow-y:visible;
+    overflow-y: auto;
+    height: 500px;
 }
 
 .ms_cont_chat-prev .ms_chat-prev {
-    background-color: #1e1c1c;
+    background-color: #4b2c2c;
     /* deb */
     height: 80px;
 
+}
+
+div.ms_chat{
+    width: 65%;
+
+}
+
+.ms_chat-head {
+    background-color: #eaeaea;
+    /* deb */
+    height: 70px;
+    border-left: 1px #d6d6d6 solid ;
+}
+
+.ms_chat-body {
+    background-image: url("../img/mine.jpg");
+    /* deb */
+    height: calc(100% - 140px);
+}
+
+.ms_chat-foot {
+    background-color: #eaeaea;
+    /* deb */
+    height: 70px;
 }
