@@ -12,6 +12,7 @@ a {
 
 body {
     font-family: 'Roboto', sans-serif;
+    position: relative;
 }
 
 img {
@@ -39,5 +40,15 @@ div.ms_head {
 div.ms_body {
     background-color: #dadbd4;
     height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
 } 
 /* bs rules  */
+
+div.ms_container {
+    background-color: #ffffff;
+    height: 95%;
+    position: absolute;
+    top: 20px;
+    width: 80%;
+}
