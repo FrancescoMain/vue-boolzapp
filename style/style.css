@@ -11,7 +11,7 @@ a {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family:Helvetica, sans-serif;
     position: relative;
 }
 
@@ -62,26 +62,6 @@ div.ms_cont_nav{
 }
 
 
-
-.ms_cont_nav .ms_nav {
-    background-color: #eaeaea;
-
-
-}
-.ms_cont_nav .ms_alert {
-    background-color: #8edafc;
-    /* deb */
-    height: 80px;
-
-}
-
-.ms_cont_nav .ms_search {
-    background-color: #eaeaea;
-    /* deb */
-    height: 50px;
-
-}
-
 .ms_cont_chat-prev{
     overflow-y: auto;
     height: 500px;
@@ -118,6 +98,12 @@ div.ms_chat{
     height: 70px;
 }
 
+.ms_cont_nav .ms_nav {
+    background-color: #eaeaea;
+
+
+}
+
 div.ms_nav-item {
     display: flex;
     justify-content: space-between;
@@ -141,3 +127,57 @@ img.ms_user-image {
     margin:0 10px;
     color: #b1b1b1;
 }
+
+.ms_cont_nav .ms_alert {
+    background-color: #8edafc;
+    display: flex;
+    align-items: center;
+    /* deb */
+    height: 80px;
+
+
+}
+
+.ms_alert-icon {
+    color: #8edafc;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    width: 50px;
+    height: 45px;
+}
+
+div.ms_alert-text {
+    font-size: 14px;
+    font-weight: semi-bold;
+    margin-left: 10px;
+}
+
+div.ms_alert-text a {
+    display: block;
+    color: #6396b0;
+    text-decoration:underline;
+}
+
+.ms_cont_nav .ms_search {
+    background-color: #eaeaea;
+
+}
+
+.ms_search form {
+    padding: 10px 5px;
+
+
+}
+.ms_search-icon {
+    background-color: #ffffff;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-control {
+    border-top-left-radius: 0;  
+    border-bottom-left-radius: 0;  
+}   
