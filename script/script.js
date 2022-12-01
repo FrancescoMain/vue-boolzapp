@@ -4,6 +4,7 @@ createApp({
     data() {
         return{
         activeItem: 0 ,
+        newMessage:"",
         user: {
             img: "img/me.jpeg",
             userName: "Francesco Cesarano"
@@ -178,8 +179,24 @@ createApp({
         activeChat(num) {
             this.activeItem = num
             
+        },
+        sendMessage() {
+            this.contacts[this.activeItem].messages.push({
+                date: '10/01/2020 15:50:00',
+                message: this.newMessage,
+                status: 'sent'   
+            });
+            this.newMessage = ""
+
+            setTimeout(this.respMessage, 2000)
+        },
+        respMessage() {
+            this.contacts[this.activeItem].messages.push({
+                date: '10/01/2020 15:51:00',
+                    message: 'Ok',
+                    status: 'received' 
+            });
         }
-        
     },
     mounted() { 
         
