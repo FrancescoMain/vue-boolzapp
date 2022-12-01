@@ -62,7 +62,11 @@
                 </div>
                 <!-- list of chat  -->
                 <div class="ms_cont_chat-prev">
-                    <div class="ms_chat-prev" v-for="contact in contacts">
+                    <div 
+                        class="ms_chat-prev" 
+                        v-for="(contact,index) in contacts"
+                        @click="activeChat(index)"
+                        >
                         <div class="ms_chat-prev-item">
                             <img :src="'img/avatar'+ contact.avatar + '.jpg' " :alt="contact.name">
                             <div class="ms_chat-prev-text">
@@ -80,10 +84,10 @@
                 <div class="ms_chat-head">
                     <div class="ms_chat-item">
                         <div class="ms_chat-item-user">
-                            <img class="ms_contact-image" :src="'img/avatar' + contacts[0].avatar + '.jpg'" :alt="user.userName">
+                            <img class="ms_contact-image" :src="'img/avatar' + contacts[activeItem].avatar + '.jpg'" :alt="contacts[activeItem].namer">
                             <div class="ms_chat-ite-text">
-                                {{contacts[0].name}}
-                                <div class="last-access">Ultimo Accesso</div>
+                                {{contacts[activeItem].name}}
+                                <div class="last-access">Ultimo Accesso: {{contacts[activeItem].messages[contacts[activeItem].messages.length - 1].date}}</div>
                             </div>
                         </div>
                         <div class="ms_chat-item-details">
@@ -95,13 +99,9 @@
                 </div>
                 <!-- chat body  -->
                 <div class="ms_chat-body">
-                    <div class="ms_chat-body-your">
-                        ho visto il messagagio mentre mangiavo e non ti ho risposto
-                        <span>17:59</span>
-                    </div>
-                    <div class="ms_chat-body-other">
-                        Come stai
-                        <span>17:59</span>
+                    <div v-for="message in contacts[activeItem].messages"  :class="message.status === 'sent'? 'ms_chat-body-your' : 'ms_chat-body-other'">
+                        {{message.message}}
+                        <span>{{message.date}}</span>
                     </div>
                 </div>
                 <!-- chat textarea  -->
