@@ -62,14 +62,15 @@
                 </div>
                 <!-- list of chat  -->
                 <div class="ms_cont_chat-prev">
-                    <div class="ms_chat-prev">
+                    <div class="ms_chat-prev" v-for="contact in contacts">
                         <div class="ms_chat-prev-item">
-                            <img :src="'img/avatar_'+ 1 + '.jpg' " :alt="contacts[0].name">
+                            <img :src="'img/avatar'+ contact.avatar + '.jpg' " :alt="contact.name">
                             <div class="ms_chat-prev-text">
-                                <h5>{{contacts[0].name}}</h5>
-                                <p>{{contacts[0].messages[0].message}}</p>
+                                <h5>{{contact.name}}</h5>
+                                <p>{{contact.messages[contact.messages.length - 1].message}}</p>
                             </div>
                         </div>
+                        <div class="prev-data">{{contact.messages[contact.messages.length - 1].date}}</div>
                     </div>
                 </div>
             </div>

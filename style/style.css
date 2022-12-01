@@ -57,14 +57,14 @@ div.ms_container {
 /* <!-- contact  --> */
 div.ms_cont_nav{
     width: 35%;
-
+    height: 100%;
 
 }
 
 /* <!-- user top navigation  --> */
 .ms_cont_nav .ms_nav {
     background-color: #eaeaea;
-
+    height: 70px;
 
 }
 
@@ -129,6 +129,7 @@ div.ms_alert-text a {
 /* <!-- search  --> */
 .ms_cont_nav .ms_search {
     background-color: #eaeaea;
+    height: 60px;
 
 }
 
@@ -151,7 +152,8 @@ form .form-control {
 
 /* <!-- list of chat  --> */
 .ms_cont_chat-prev{
-    overflow-y: auto;
+    overflow: auto;
+    height:calc(100% - 210px) ;
 
 }
 
@@ -164,6 +166,7 @@ form .form-control {
 
 .ms_chat-prev-item {
     display: flex;
+
 }
 
 .ms_chat-prev-item img {
@@ -189,6 +192,14 @@ form .form-control {
     font-size: 14px;
     color: #b6b9bb;
 
+}
+
+.prev-data {
+    font-size: 10px;
+    color: #c1c7c7;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
 }
 
 
