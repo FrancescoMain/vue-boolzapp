@@ -74,7 +74,7 @@
                                 <p>{{contact.messages[contact.messages.length - 1].message}}</p>
                             </div>
                         </div>
-                        <div class="prev-data">{{contact.messages[contact.messages.length - 1].date}}</div>
+                        <div class="prev-data">{{contact.messages[contact.messages.length - 1].date.substr(11, 5)}}</div>
                     </div>
                 </div>
             </div>
@@ -99,10 +99,22 @@
                 </div>
                 <!-- chat body  -->
                 <div class="ms_chat-body">
-                    <div v-for="message in contacts[activeItem].messages"  :class="message.status === 'sent'? 'ms_chat-body-your' : 'ms_chat-body-other'">
+                    <div v-for="(message,index) in contacts[activeItem].messages"  
+                    :class="message.status === 'sent'? 'ms_chat-body-your' : 'ms_chat-body-other'"
+                    @mouseover="hover(message)"
+                    @mouseleave="leave(message)">
                         {{message.message}}
-                        <span>{{message.date}}</span>
+                        <span>{{message.date.substr(11, 5)}}</span>
+                        <i class="fa-solid fa-angle-down ms-2 hidden"
+                            :class="message.over? 'active' : 'hidden'"
+                            @click="message.dropdown = true"></i>
+                        <ul class="dropdown"
+                            v-if="message.dropdown">
+                            <li><a class="dropdown-item" href="#">Message Info</a></li>
+                            <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Delete</a></li>
+                        </ul>
                     </div>
+                    
                 </div>
                 <!-- chat textarea  -->
                 <div class="ms_chat-foot">
@@ -126,6 +138,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <!-- my script  -->
+    <script type="text/javascript" src="script/luxon.js"></script>
     <script type="text/javascript" src="script/script.js"></script>
 </body>
 </html>
