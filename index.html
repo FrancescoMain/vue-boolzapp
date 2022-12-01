@@ -57,7 +57,7 @@
                         <span class="input-group-text ms_search-icon">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
-                        <input type="text" class="form-control ms_search-bar" placeholder="Cerca o inizia una nuova chat">          
+                        <input type="text" class="form-control ms_search-bar" placeholder="Cerca o inizia una nuova chat" v-model="searchBar">          
                     </form>
                 </div>
                 <!-- list of chat  -->
@@ -66,6 +66,7 @@
                         class="ms_chat-prev" 
                         v-for="(contact,index) in contacts"
                         @click="activeChat(index)"
+                        v-if="contact.visible"
                         >
                         <div class="ms_chat-prev-item">
                             <img :src="'img/avatar'+ contact.avatar + '.jpg' " :alt="contact.name">
@@ -109,7 +110,12 @@
                     <div class="emoji">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
-                    <input type="text" class="form-control  ms_text-bar" placeholder="Scrivi un messaggio" v-model="newMessage">
+                    <input 
+                        type="text" class="form-control  ms_text-bar" 
+                        placeholder="Scrivi un messaggio" 
+                        v-model="newMessage"
+                        v-on:keyup.enter="sendMessage"
+                        >
                     <div class="send" @click="sendMessage">
                         <i class="fa-solid fa-paper-plane"></i>
                     </div>
