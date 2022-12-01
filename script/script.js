@@ -5,7 +5,7 @@ createApp({
         return{
         activeItem: 0 ,
         newMessage:"",
-        searchBar:"",
+        searchQuery: null,
         user: {
             img: "img/me.jpeg",
             userName: "Francesco Cesarano"
@@ -197,9 +197,19 @@ createApp({
                     message: 'Bene e tu?',
                     status: 'received' 
             });
+            
         }
     },
-    mounted() { 
+    computed: {     
+        resultQuery(){
+            if(this.searchQuery){
+            return this.contacts.filter((item)=>{
+            return this.searchQuery.toLowerCase().split(' ').every(v => item.name.toLowerCase().includes(v))
+            })
+            }else{  
+            return this.contacts;
+            }
+        }
         
     },
 
