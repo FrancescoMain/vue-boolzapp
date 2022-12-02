@@ -1,3 +1,5 @@
+
+var DateTime = luxon.DateTime;
 const { createApp } = Vue ;
 
 createApp({
@@ -5,7 +7,8 @@ createApp({
         return{
         activeItem: 0 ,
         newMessage:"",
-        searchQuery: null,
+        searchQuery: "",
+        now : "",
         user: {
             img: "img/me.jpeg",
             userName: "Francesco Cesarano"
@@ -226,6 +229,8 @@ createApp({
         },
         hover(message) {
             message.over = true;
+            this.search()
+
         },
         leave(message) {
             message.over = false;
@@ -233,20 +238,27 @@ createApp({
         },
         deleteMessage(index) {  
             this.contacts[this.activeItem].messages.splice(index, 1);
+        },
+
+        date(){
+            this.now = DateTime.now();
+            console.log(this.now);
         }
-    },
-    computed: {     
-        resultQuery(){
-            if(this.searchQuery){
-            return this.contacts.filter((item)=>{
-            return this.searchQuery.toLowerCase().split(' ').every(v => item.name.toLowerCase().includes(v))
-            })
-            }else{  
-            return this.contacts;
+        ,
+        search(num){
+            nome = this.contacts[num].name.toLowerCase(); 
+
+            if(nome.includes(this.searchQuery)) {
+                return true;            
+            }else{
+                return false;
             }
+            
+
         }
-        
+
     },
+
 
         
 }).mount("#app") 
