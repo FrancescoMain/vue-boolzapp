@@ -73,10 +73,12 @@
                             <img :src="'img/avatar'+ contact.avatar + '.jpg' " :alt="contact.name">
                             <div class="ms_chat-prev-text">
                                 <h5>{{contact.name}}</h5>
-                                <p>{{contact.messages[contact.messages.length - 1].message}}</p>
+                                <p>{{contact.messages.length > 0 ?
+                                    contact.messages[contact.messages.length - 1].message : ""}}</p>
                             </div>
                         </div>
-                        <div class="prev-data">{{contact.messages[contact.messages.length - 1].date.substr(11, 5)}}</div>
+                        <div class="prev-data">{{contact.messages.length > 0 ?
+                            contact.messages[contact.messages.length - 1].date.substr(11, 5) : ""}}</div>
                     </div>
                     </template>
                 </div>
@@ -90,7 +92,8 @@
                             <img class="ms_contact-image" :src="'img/avatar' + contacts[activeItem].avatar + '.jpg'" :alt="contacts[activeItem].namer">
                             <div class="ms_chat-ite-text">
                                 {{contacts[activeItem].name}}
-                                <div class="last-access">Ultimo Accesso: {{contacts[activeItem].messages[contacts[activeItem].messages.length - 1].date}}</div>
+                                <div class="last-access">Ultimo Accesso: {{contacts[activeItem].messages.length > 0 ?
+                                    contacts[activeItem].messages[contacts[activeItem].messages.length - 1].date : ""}}</div>
                             </div>
                         </div>
                         <div class="ms_chat-item-details">
