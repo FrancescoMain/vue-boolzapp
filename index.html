@@ -134,7 +134,10 @@
                         v-on:keyup.enter="sendMessage"
                         >
                     <div class="send" @click="sendMessage">
-                        <i class="fa-solid fa-paper-plane"></i>
+                        
+                        <i v-if="messageExist()" 
+                        class="fa-solid fa-paper-plane"></i>
+                        <i v-else class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
             </div>                

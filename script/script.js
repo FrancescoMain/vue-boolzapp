@@ -256,6 +256,12 @@ createApp({
             }
             
 
+        },
+
+        messageExist() {  
+            if(this.newMessage.length > 0){
+                return true;
+            }
         }
 
     },
