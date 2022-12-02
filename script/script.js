@@ -8,7 +8,8 @@ createApp({
         activeItem: 0 ,
         newMessage:"",
         searchQuery: "",
-        now : "",
+        now : DateTime.now(),
+        dt : DateTime.local(2017, 5, 15, 8, 30),
         user: {
             img: "img/me.jpeg",
             userName: "Francesco Cesarano"
@@ -205,19 +206,25 @@ createApp({
     },
     methods: 
     {
+        onlySpaces(str) {
+            return /^\s*$/.test(str)
+        },
+
         activeChat(num) {
             this.activeItem = num
             
         },
         sendMessage() {
-            this.contacts[this.activeItem].messages.push({
-                date: '10/01/2020 15:50:00',
-                message: this.newMessage,
-                status: 'sent'   
-            });
-            this.newMessage = ""
+            if(!this.onlySpaces(this.newMessage)) {
+                this.contacts[this.activeItem].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    message: this.newMessage,
+                    status: 'sent'   
+                });
+                this.newMessage = ""
+                setTimeout(this.respMessage, 2000)
+            }
 
-            setTimeout(this.respMessage, 2000)
         },
         respMessage() {
             this.contacts[this.activeItem].messages.push({
@@ -229,7 +236,6 @@ createApp({
         },
         hover(message) {
             message.over = true;
-            this.search()
 
         },
         leave(message) {
@@ -240,11 +246,6 @@ createApp({
             this.contacts[this.activeItem].messages.splice(index, 1);
         },
 
-        date(){
-            this.now = DateTime.now();
-            console.log(this.now);
-        }
-        ,
         search(num){
             nome = this.contacts[num].name.toLowerCase(); 
 
