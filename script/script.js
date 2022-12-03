@@ -8,6 +8,7 @@ createApp({
         newMessage:"",
         searchQuery: "",
         statusContact: "",
+        deleteAll : false,
         typing: false,
         online: false,
         user: {
@@ -318,8 +319,16 @@ createApp({
             }  
             
             else {
-                return  "";
+                return  "Non ci sono messaggi";
             }
+        },
+        deleteAllMessages(){
+            this.contacts[this.activeItem].messages = []
+            this.deleteAll= false;
+        },
+        deleteContact(){
+            this.contacts.splice(this.activeItem, 1);
+            this.deleteAll= false;
         }    
             
 
