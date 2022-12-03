@@ -343,5 +343,14 @@ div.ms_chat-body-other span {
     color: #6d7576;
     margin-right: 40px;
 }
+.ms_addContact {
+    position: absolute;
+    width: 250px;
+    top: 50px;
+    left: 288px;
 
+}
+.ms_newUser {
+    padding: 20px;
+}
 /* bs rules  */

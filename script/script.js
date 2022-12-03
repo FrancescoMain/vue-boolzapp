@@ -8,6 +8,8 @@ createApp({
         newMessage:"",
         searchQuery: "",
         statusContact: "",
+        newContact:"",
+        newContactPop: false,
         deleteAll : false,
         typing: false,
         online: false,
@@ -329,7 +331,30 @@ createApp({
         deleteContact(){
             this.contacts.splice(this.activeItem, 1);
             this.deleteAll= false;
-        }    
+        },
+        addContact(){
+            num = parseInt(Math.random() * (7 - 0) + 1)
+            console.log(num);
+            this.contacts.unshift({
+                name: this.newContact,
+                avatar: '_'+ num,
+                visible: true,
+                messages: [],
+            })
+            this.newContactPop = false
+            this.newContact = ""
+        },
+        addContactBySearch(){
+            num = parseInt(Math.random() * (7 - 0) + 1)
+            console.log(num);
+            this.contacts.unshift({
+                name: this.searchQuery,
+                avatar: '_'+ num,
+                visible: true,
+                messages: [],
+            })
+            this.searchQuery = ""
+        }        
             
 
     },
