@@ -1,5 +1,4 @@
 
-var DateTime = luxon.DateTime;
 const { createApp } = Vue ;
 
 createApp({
@@ -8,8 +7,9 @@ createApp({
         activeItem: 0 ,
         newMessage:"",
         searchQuery: "",
-        now : DateTime.now(),
-        dt : DateTime.local(2017, 5, 15, 8, 30),
+        statusContact: "",
+        typing: false,
+        online: false,
         user: {
             img: "img/me.jpeg",
             userName: "Francesco Cesarano"
@@ -264,14 +264,20 @@ createApp({
                     status: 'sent'   
                 });
                 this.newMessage = ""
+                this.typing = true;
                 setTimeout(this.respMessage, 2000)
             }
 
         },
         respMessage() {
+
             num = parseInt(Math.random() * (6 - 0))
             this.contacts[this.activeItem].messages.push(this.replyMessages[num]);
-            
+            this.online = true;
+            setTimeout(() => {
+                this.online = false;
+                this.typing = false;
+            }, "3000")
         },
         hover(message) {
             message.over = true;
@@ -301,7 +307,21 @@ createApp({
             if(this.newMessage.length > 0){
                 return true;
             }
-        }
+        },
+        lastAccess(){
+            if (this.contacts[this.activeItem].messages.length > 0 && this.typing === false) {
+                return ("Ultimo accesso: " + this.contacts[this.activeItem].messages[this.contacts[this.activeItem].messages.length - 1].date.substr(11, 5))
+            }else if (this.typing === true && this.online === false) {
+                return "sta scrivendo..." ;    
+            } else if (this.typing === true) {
+                return "Online"
+            }  
+            
+            else {
+                return  "";
+            }
+        }    
+            
 
     },
     timeNow () {
