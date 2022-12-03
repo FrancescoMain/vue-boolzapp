@@ -14,6 +14,39 @@ createApp({
             img: "img/me.jpeg",
             userName: "Francesco Cesarano"
         },
+        replyMessages :[
+            {
+                date: '10/01/2020 15:51:00',
+                message: 'Bene e tu?',
+                status: 'received' 
+            },
+            {
+                date: '10/01/2020 15:51:00',
+                message: 'Ok',
+                status: 'received' 
+            },
+            {
+                date: '10/01/2020 15:51:00',
+                message: 'Grazie',
+                status: 'received' 
+            },
+            {
+                date: '10/01/2020 15:51:00',
+                message: 'Si e tu?',
+                status: 'received' 
+            },
+            {
+                date: '10/01/2020 15:51:00',
+                message: 'Va bene',
+                status: 'received' 
+            },
+            {
+                date: '10/01/2020 15:51:00',
+                message: 'Ciao',
+                status: 'received' 
+            }
+
+        ],
         contacts: [
             {
                 name: 'Michele',
@@ -216,6 +249,7 @@ createApp({
         },
         sendMessage() {
             if(!this.onlySpaces(this.newMessage)) {
+                
                 this.contacts[this.activeItem].messages.push({
                     date: '10/01/2020 15:50:00',
                     message: this.newMessage,
@@ -227,11 +261,9 @@ createApp({
 
         },
         respMessage() {
-            this.contacts[this.activeItem].messages.push({
-                date: '10/01/2020 15:51:00',
-                    message: 'Bene e tu?',
-                    status: 'received' 
-            });
+            num = parseInt(Math.random() * (6 - 0))
+            console.log(num);
+            this.contacts[this.activeItem].messages.push(this.replyMessages[num]);
             
         },
         hover(message) {
