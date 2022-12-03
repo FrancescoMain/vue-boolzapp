@@ -16,32 +16,32 @@ createApp({
         },
         replyMessages :[
             {
-                date: '10/01/2020 15:51:00',
+                date: this.getTime(),
                 message: 'Bene e tu?',
                 status: 'received' 
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: this.getTime(),
                 message: 'Ok',
                 status: 'received' 
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: this.getTime(),
                 message: 'Grazie',
                 status: 'received' 
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: this.getTime(),
                 message: 'Si e tu?',
                 status: 'received' 
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: this.getTime(),
                 message: 'Va bene',
                 status: 'received' 
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: this.getTime(),
                 message: 'Ciao',
                 status: 'received' 
             }
@@ -239,6 +239,14 @@ createApp({
     },
     methods: 
     {
+        getTime(){
+            // get time 
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date+'  '+time;
+            return dateTime;
+        },
         onlySpaces(str) {
             return /^\s*$/.test(str)
         },
@@ -249,9 +257,9 @@ createApp({
         },
         sendMessage() {
             if(!this.onlySpaces(this.newMessage)) {
-                
+
                 this.contacts[this.activeItem].messages.push({
-                    date: '10/01/2020 15:50:00',
+                    date: this.getTime(),
                     message: this.newMessage,
                     status: 'sent'   
                 });
@@ -262,7 +270,6 @@ createApp({
         },
         respMessage() {
             num = parseInt(Math.random() * (6 - 0))
-            console.log(num);
             this.contacts[this.activeItem].messages.push(this.replyMessages[num]);
             
         },
@@ -297,6 +304,10 @@ createApp({
         }
 
     },
+    timeNow () {
+        today = new Date();
+        return today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();  
+    }
 
 
         
